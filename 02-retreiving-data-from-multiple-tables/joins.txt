@@ -127,3 +127,17 @@ JOIN order_item_notes oin
 
 ///////////////////////////////////////////////////////////
 ==================Implicit Join Syntax =================
+
+=> explicit join syntax(that we have used so far)
+SELECT *
+FROM customers c
+JOIN orders o
+	ON c.customer_id = o.customer_id
+
+=> implicit join syntax
+
+SELECT *
+FROM customers c, orders o
+WHERE c.customer_id = o.customer_id
+
+with WHERE clause we can get the same result. if accidently we forgot to write the WHERE clause than it will become cross join. cross join means for each customers item there will be all orders items.
