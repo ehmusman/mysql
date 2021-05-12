@@ -1,0 +1,43 @@
+
+///////////////////////////////////////////////////////////
+=========================INNER JOINS===================
+we have only selected columns from a single table. but in real world we often select columns from multiple tables.
+in orders table we have a column called customer_id. this actually contains the identity of a customer who has placed the order. we are not storing the full customers addres in it. 
+
+in SQL there are two types of JOINs
+1- inner JOIN
+2- outer JOIN
+
+in INNER JOIN the INNER keyword is actually optional. 
+
+SELECT *
+FROM orders
+JOIN customers
+        ON condition(orders.customer_id = customers.customer_id)
+
+-> selecting only orderid, firstname, lastname, customerid
+
+SELECT order_id, orders.customer_id, first_name, last_name
+FROM orders
+JOIN customers ON customers.customer_id = orders.customer_id
+
+// here we are repeating the words like orders, customers
+// alias their names
+
+SELECT order_id, o.customer_id, first_name, last_name
+FROM orders o
+JOIN customers c
+	ON c.customer_id = o.customer_id
+
+=== -> -> Exercise
+Join tho order_items table with product table such that each table shows the product_id as well as its name followed by the quantity and unit price from the order_items table
+
+SELECT  order_id, p.product_id, name, quantity, oi.unit_price
+FROM order_items oi
+JOIN products p 
+	ON oi.product_id = p.product_id
+
+
+
+///////////////////////////////////////////////////////////
+==================Joining Across Databases ==============
