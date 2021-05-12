@@ -141,3 +141,37 @@ FROM customers c, orders o
 WHERE c.customer_id = o.customer_id
 
 with WHERE clause we can get the same result. if accidently we forgot to write the WHERE clause than it will become cross join. cross join means for each customers item there will be all orders items.
+
+
+
+///////////////////////////////////////////////////////////
+==================OUTER JOIN =============================
+OUTER JOIN has two types
+1- LEFT OUTER JOIN  => here outer is optional
+2- RIGHT OUTER JOIN => here outer is optional
+
+=> simply iner join 
+SELECT *
+FROM customers c
+JOIN orders o
+	ON c.customer_id = o.customer_id
+// it will show the result according to condition
+
+=> LEFT JOIN
+this join will return all the records of left table even the condition is satisfied or not
+
+SELECT *
+FROM customers c
+LEFT JOIN orders o
+	ON c.customer_id = o.customer_id
+ORDER BY c.customer_id
+
+=> RIGHT JOIN
+this join will return all the records of right table even the condition is satisfied or not
+
+
+SELECT *
+FROM customers c
+RIGHT JOIN orders o
+	ON c.customer_id = o.customer_id
+ORDER BY c.customer_id
