@@ -175,3 +175,39 @@ FROM customers c
 RIGHT JOIN orders o
 	ON c.customer_id = o.customer_id
 ORDER BY c.customer_id
+
+
+
+
+///////////////////////////////////////////////////////////
+=============OUTER JOIN Between Multiple Tables ==========
+SELECT 
+	c.customer_id,
+    c.first_name,
+    o.order_id,
+    sh.name AS Shipper
+FROM customers c
+LEFT JOIN orders o
+	ON c.customer_id = o.customer_id
+LEFT JOIN shippers sh
+	ON o.shipper_id = sh.shipper_id
+ORDER BY c.customer_id
+
+
+
+=== => => Exercise
+
+SELECT 
+	o.order_id,
+	o.order_date,
+    c.first_name,
+    sh.name AS Shipper,
+    os.name AS Order_Status
+FROM orders o
+LEFT JOIN customers c
+	ON o.customer_id = c.customer_id
+LEFT JOIN shippers sh
+	ON sh.shipper_id = o.shipper_id
+LEFT JOIN order_statuses os
+	ON os.order_status_id = o.status
+ORDER BY os.name
