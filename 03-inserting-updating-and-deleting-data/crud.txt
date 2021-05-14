@@ -1,0 +1,36 @@
+
+///////////////////////////////////////////////////////////
+========================INSERTING A ROW====================
+=> first method is to write al data in a sequence. the values which we dont want to add is replaced by NULL keyword. and some values are default.
+
+INSERT INTO customers
+VALUES(
+DEFAULT,
+"Usman",
+"Bakhsh",
+"1995-05-17",
+NULL,
+"New Green Town",
+"Faisalabad",
+"Pakistan",
+DEFAULT
+)
+
+=> second way
+insert only those values that we want to add
+INSERT INTO customers (
+first_name,
+last_name,
+birth_date,
+address,
+city,
+state
+)
+VALUES(
+"Farooq",
+"Bakhsh",
+"1991-12-18",
+"New Green Town",
+"Faisalabad",
+"Pakistan"
+)
