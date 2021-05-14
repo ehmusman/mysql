@@ -34,3 +34,33 @@ VALUES(
 "Faisalabad",
 "Pakistan"
 )
+
+
+
+///////////////////////////////////////////////////////////
+====================INSERTING Multiple ROW==============
+
+INSERT INTO shippers (name)
+VALUES ("Shipper1"),
+		("Shipper2"),
+        ("Shipper3")
+
+=== => => Exercise
+Insert Three rows in the products table
+
+INSERT INTO products (name, quantity_in_stock, unit_price)
+VALUES ("Product1", 25, 1.45),
+		("Product2", 35, 2.45),
+        ("Product3", 45, 3.45)
+
+
+///////////////////////////////////////////////////////////
+====================INSERTING HIERARCHICAL ROWS============
+means inserting data in multiple tables
+
+INSERT INTO orders (customer_id, order_date, status)
+VALUES (1, "2021-05-14", 1);
+
+INSERT INTO order_items 
+VALUES 	
+	(LAST_INSERT_ID(),1,1,1.3)
