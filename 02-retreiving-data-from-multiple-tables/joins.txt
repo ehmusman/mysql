@@ -273,3 +273,43 @@ SELECT *
 FROM orders o
 JOIN customers c
     ON o.customer_id = c.customer_id
+
+
+
+
+///////////////////////////////////////////////////////////
+========================The CROSS JOIN ====================
+=> explicit syntax for cross join
+SELECT 
+	c.first_name,
+    p.name AS Product
+FROM products p
+CROSS JOIN customers c
+ORDER BY c.first_name
+
+
+=> implicit Syntax
+SELECT 
+	c.first_name,
+    p.name AS Product
+FROM products p, customers c
+ORDER BY c.first_name
+
+
+=== => => 
+do a cross join between shippers and products.
+1- in implicit syntax
+2- in explicit syntax
+
+1- solution
+SELECT 
+	p.name AS Product,
+    sh.name AS Shipper
+FROM products p, shippers sh
+
+2- solution
+SELECT 
+	p.name AS Product,
+    sh.name AS Shipper
+FROM products p
+CROSS JOIN shippers sh
